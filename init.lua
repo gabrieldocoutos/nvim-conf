@@ -26,18 +26,10 @@ augroup END ]])
 require("lazy").setup("plugins")
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("autoclose").setup()
 
 vim.cmd([[colorscheme tokyonight-day]])
 
-require("lspconfig").lua_ls.setup({
-	settings = {
-		Lua = {
-			diagnostics = { globals = { "vim" } },
-		},
-	},
-})
-
-require("lspconfig").emmet_language_server.setup({})
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -142,8 +134,15 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require("lspconfig")["lua_ls"].setup({
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			diagnostics = { globals = { "vim" } },
+		},
+	},
 })
 
 require("lspconfig")["tsserver"].setup({
 	capabilities = capabilities,
 })
+
+require("lspconfig").emmet_language_server.setup({})
