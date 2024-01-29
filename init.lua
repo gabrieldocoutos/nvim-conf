@@ -13,6 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.wo.relativenumber = true
+vim.wo.number = true
 vim.g.mapleader = " "
 -- vim.cmd [[autocmd BufWritePre <buffer> | Neoformat()]]
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
@@ -35,6 +36,7 @@ require("lspconfig").lua_ls.setup({
 	},
 })
 
+require("lspconfig").emmet_language_server.setup({})
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
