@@ -25,6 +25,8 @@ require("lazy").setup("plugins")
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+vim.cmd([[colorscheme tokyonight]])
+
 require("lspconfig").lua_ls.setup({
 	settings = {
 		Lua = {
