@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.wo.relativenumber = true
 vim.wo.number = true
+vim.wo.so = 999
 vim.g.mapleader = " "
 -- vim.cmd [[autocmd BufWritePre <buffer> | Neoformat()]]
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
@@ -26,7 +27,7 @@ require("lazy").setup("plugins")
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme tokyonight-day]])
 
 require("lspconfig").lua_ls.setup({
 	settings = {
