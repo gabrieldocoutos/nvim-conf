@@ -7,4 +7,5 @@ return {
 		opts = {},
 	},
 	{ "m4xshen/autoclose.nvim" },
+	{ "mhinz/vim-signify" },
 }

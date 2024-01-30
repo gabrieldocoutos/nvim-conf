@@ -16,5 +16,6 @@
   "telescope-lazy.nvim": { "branch": "main", "commit": "7a360fc33d0728cf0c18c0032ca36ebfe3cd2a8c" },
   "telescope.nvim": { "branch": "master", "commit": "4367e05c06d19f28c514e1498bcd9410f4bc65b2" },
   "tokyonight.nvim": { "branch": "main", "commit": "e3301873c1e96903daebb98cc9b5926810bf73dd" },
+  "vim-signify": { "branch": "master", "commit": "7d538b77a5a8806e344b057f8846f6d0c035efa9" },
   "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" }
 }
