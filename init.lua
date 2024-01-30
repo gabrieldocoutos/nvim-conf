@@ -16,7 +16,9 @@ vim.wo.relativenumber = true
 vim.wo.number = true
 vim.wo.so = 999
 vim.g.mapleader = " "
+
 -- vim.cmd [[autocmd BufWritePre <buffer> | Neoformat()]]
+--
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 vim.cmd([[ augroup fmt
   autocmd!
@@ -29,6 +31,8 @@ require("mason-lspconfig").setup()
 require("autoclose").setup()
 
 vim.cmd([[colorscheme tokyonight]])
+
+vim.keymap.set("n", "<leader>b", vim.cmd.CHADopen)
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
