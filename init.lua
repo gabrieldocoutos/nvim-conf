@@ -28,7 +28,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require("autoclose").setup()
 
-vim.cmd([[colorscheme tokyonight-day]])
+vim.cmd([[colorscheme tokyonight]])
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
