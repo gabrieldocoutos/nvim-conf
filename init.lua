@@ -34,6 +34,8 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
+vim.keymap.set("n", "<leader>d", vim.lsp.buf.code_action)
+
 vim.cmd([[
 augroup FormatAutogroup
   autocmd!
