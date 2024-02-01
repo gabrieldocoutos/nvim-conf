@@ -180,6 +180,8 @@ cmp.setup.cmdline(":", {
 	}),
 })
 
+vim.g.vim_svelte_plugin_use_typescript = 1
+
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
@@ -196,4 +198,6 @@ require("lspconfig")["tsserver"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig").emmet_language_server.setup({})
+require("lspconfig")["svelte"].setup({
+	capabilities = capabilities,
+})
