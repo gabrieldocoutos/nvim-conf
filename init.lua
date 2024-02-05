@@ -79,6 +79,11 @@ require("formatter").setup({
 			require("formatter.filetypes.typescriptreact").eslint_d,
 		},
 
+		svelte = {
+			require("formatter.filetypes.svelte").prettier,
+			require("formatter.filetypes.svelte").eslint_d,
+		},
+
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {
