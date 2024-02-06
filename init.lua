@@ -22,6 +22,7 @@ require("lazy").setup("plugins")
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("autoclose").setup()
+require("lualine").setup({ theme = "palenight" })
 
 vim.cmd([[colorscheme tokyonight]])
 
