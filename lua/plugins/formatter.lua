@@ -30,13 +30,29 @@ require("formatter").setup({
 		},
 
 		typescriptreact = {
-			require("formatter.filetypes.typescriptreact").prettier,
+			function()
+				return {
+					exe = "./node_modules/.bin/prettier",
+					args = { "--stdin-filepath", util.get_current_buffer_file_path() },
+					stdin = true,
+				}
+			end,
 			require("formatter.filetypes.typescriptreact").eslint_d,
 		},
 
 		svelte = {
 			require("formatter.filetypes.svelte").prettier,
 			require("formatter.filetypes.svelte").eslint_d,
+		},
+
+		scss = {
+			function()
+				return {
+					exe = "./node_modules/.bin/prettier",
+					args = { "--stdin-filepath", util.get_current_buffer_file_path() },
+					stdin = true,
+				}
+			end,
 		},
 
 		-- Use the special "*" filetype for defining formatter configurations on
