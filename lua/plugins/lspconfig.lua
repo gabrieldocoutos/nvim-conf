@@ -18,8 +18,10 @@ require("lspconfig")["svelte"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["cssmodules_ls"].setup({ capabilities = capabilities, filetypes = { "scss" } })
+require("lspconfig")["emmet_ls"].setup({ capabilities = capabilities, filetypes = { "scss" } })
 
--- require("lspconfig")["emmet_ls"].setup({ capabilities = capabilities, filetypes = { "scss" } })
+require("lspconfig")["eslint"].setup({
+	capabilities = capabilities,
+})
 
 return {}
