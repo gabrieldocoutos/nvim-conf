@@ -25,4 +25,10 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{ "sindrets/diffview.nvim" },
+	{ "github/copilot.vim" },
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
+	},
 }
