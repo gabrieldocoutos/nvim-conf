@@ -96,3 +96,5 @@ end)
 vim.keymap.set("n", "gR", function()
 	require("trouble").toggle("lsp_references")
 end)
+
+vim.keymap.set("n", "<leader><leader>", "<Cmd>Telescope frecency<CR>")
