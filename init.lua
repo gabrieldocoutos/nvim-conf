@@ -77,10 +77,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-vim.keymap.set("n", "<leader>tt", function()
-	require("neotest").run.run()
-end)
-
 -- Lua
 vim.keymap.set("n", "<leader>xx", function()
 	require("trouble").toggle()
