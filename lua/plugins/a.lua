@@ -29,7 +29,9 @@ return {
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
+		opts = {
+			height = 20,
+		},
 	},
 	{
 		"pmizio/typescript-tools.nvim",
@@ -40,6 +42,49 @@ return {
 		"nvim-telescope/telescope-frecency.nvim",
 		config = function()
 			require("telescope").load_extension("frecency")
+		end,
+	},
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-neotest/neotest-go",
+			"nvim-neotest/neotest-jest",
+		},
+		config = function()
+			require("neotest").setup({
+				output = { open_on_run = true },
+				quickfix = {
+					open = function()
+						require("trouble").open({ mode = "quickfix", focus = false, height = 20 })
+					end,
+				},
+				discovery = {
+					enabled = false,
+				},
+				adapters = {
+					require("neotest-go"),
+					require("neotest-jest")({
+						jestCommand = "yarn test",
+						jestConfigFile = function(file)
+							if string.find(file, "/packages/") then
+								local match = string.match(file, "(.-/[^/]+/)src")
+								return match
+							end
+							local cwd = vim.fn.getcwd()
+							return cwd .. "/jest.config.js"
+						end,
+						jest_test_discovery = false,
+						env = { CI = true },
+						cwd = function(path)
+							return vim.fn.getcwd()
+						end,
+					}),
+				},
+			})
 		end,
 	},
 }
