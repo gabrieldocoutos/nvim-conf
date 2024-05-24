@@ -45,6 +45,16 @@ augroup FormatAutogroup
 augroup END
 ]])
 
+-- Neotest mappings
+
+vim.keymap.set("n", "<space>tt", function()
+	require("neotest").run.run()
+end)
+
+vim.keymap.set("n", "<space>tf", function()
+	require("neotest").run.run(vim.fn.expand("%"))
+end)
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd("LspAttach", {
