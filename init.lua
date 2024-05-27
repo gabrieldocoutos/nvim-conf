@@ -18,6 +18,8 @@ vim.wo.so = 999
 vim.g.mapleader = " "
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.opt.clipboard = "unnamed"
+vim.cmd("language en_US")
+vim.api.nvim_set_var("chadtree_settings", { view = { width = 80 } })
 
 require("lazy").setup("plugins")
 require("mason").setup()
