@@ -24,4 +24,6 @@ require("lspconfig")["eslint"].setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig")["pylsp"].setup({ capabilities = capabilities })
+
 return {}

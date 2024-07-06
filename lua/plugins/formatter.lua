@@ -17,6 +17,10 @@ require("formatter").setup({
 			require("formatter.filetypes.lua").stylua,
 		},
 
+		python = {
+			require("formatter.filetypes.python").black,
+		},
+
 		typescript = {
 			-- require("formatter.filetypes.typescript").prettier,
 			require("formatter.filetypes.typescript").eslint_d,
