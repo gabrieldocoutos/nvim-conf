@@ -11,10 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 
-if vim.env.ZELLIJ ~= nil then
-	vim.fn.system({ "zellij", "action", "switch-mode", "locked" })
-end
-
 vim.opt.rtp:prepend(lazypath)
 vim.wo.number = true
 vim.wo.relativenumber = true
