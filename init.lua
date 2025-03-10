@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.wo.so = 999
+vim.bo.autoindent = true
 vim.g.mapleader = " "
 vim.g.vim_svelte_plugin_use_typescript = 1
 vim.opt.clipboard = "unnamed"
