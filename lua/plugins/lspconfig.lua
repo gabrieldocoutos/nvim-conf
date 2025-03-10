@@ -10,7 +10,7 @@ require("lspconfig")["lua_ls"].setup({
 	},
 })
 
-require("lspconfig")["tsserver"].setup({
+require("lspconfig")["ts_ls"].setup({
 	capabilities = capabilities,
 })
 
@@ -25,5 +25,8 @@ require("lspconfig")["eslint"].setup({
 })
 
 require("lspconfig")["pylsp"].setup({ capabilities = capabilities })
+
+
+require("lspconfig")["gopls"].setup({ capabilities = capabilities })
 
 return {}
